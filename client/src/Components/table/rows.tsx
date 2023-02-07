@@ -4,9 +4,10 @@ import { Coin } from "../../types/coinType";
 import { State } from "../../types/ReducerTypes";
 import TableCoin from "./tableCoin";
 
-import style from "./rows.module.css";
 import { getCoinDetail } from "../../redux/actions/actions";
 import { AppDispatch } from "../../redux/store/store";
+
+import style from "./rows.module.css";
 
 function RowsCoin() {
   const coins = useSelector((state: State) => state.coins);

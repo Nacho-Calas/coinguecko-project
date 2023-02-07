@@ -1,14 +1,10 @@
-import { useGetDetail } from "../../hooks/useGetDetail";
-import style from "./index.module.css";
 import { useSelector } from "react-redux";
 import { Coin } from "../../types/coinType";
 import { currencyFormat } from "../../utils/mktFormat";
 
-//create a page for each coin that will show the details of the coin
+import style from "./index.module.css";
 
 function CoinDetails() {
-  /* const id = window.location.pathname.split("/")[2];
-  useGetDetail(id); */
   const coin = useSelector((state: Coin) => state.coinDetail);
 
   return (
