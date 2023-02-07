@@ -1,8 +1,6 @@
 .banner {
   position: relative;
   background-image: url("../../../public/banner.jpg");
- /*  background-repeat: no-repeat;
-  background-position: center; */
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -13,7 +11,7 @@
   justify-content: center;
   height: 100vh;
   font-size: 4rem;
-  color: aliceblue;
+  color: rgb(180, 177, 0);
   font-weight: 700;
-  text-shadow: 0 0 10px #fefefe61;
+  text-shadow: 0 0 0 10px #fefefe61;
 }

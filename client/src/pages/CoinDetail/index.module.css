@@ -3,7 +3,50 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     margin: 0 auto;
     color: aliceblue;
+    width: 100vh;
+    height: 50vw;
+    
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: solid 1px #c0b1b1d8;
+    border-radius: 15px;
+}
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    border-bottom: 1px solid #c0b1b1d8;
+}
+.title h2{
+    width: 2;
+    height: 2;
+    margin-left: 10px;
+    color: #ffffff65;
+    text-transform: uppercase;
+}
+
+.market{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    font-size: 12px;
+}
+.price{
+    display: flex;
+    text-align: left;
+    font-size: x-large;
+}
+.high{
+    color: rgb(1, 105, 1);
+}
+.low{
+    color: rgb(144, 0, 0);
 }

@@ -5,12 +5,19 @@ import { State } from "../../types/ReducerTypes";
 import TableCoin from "./tableCoin";
 
 import style from "./rows.module.css";
+import { getCoinDetail } from "../../redux/actions/actions";
+import { AppDispatch } from "../../redux/store/store";
 
 function RowsCoin() {
   const coins = useSelector((state: State) => state.coins);
 
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleClick = (id: string) => {
+    dispatch(getCoinDetail(id));
+    navigate(`/coins/${id}`);
+  };
 
   return (
     <div>
@@ -27,7 +34,7 @@ function RowsCoin() {
         </thead>
         <tbody>
           {coins.map((coin: Coin) => (
-            <tr key={coin.id} onClick={() => navigate(`/coins/${coin.id}`)}>
+            <tr key={coin.id} onClick={() => handleClick(coin.id)}>
               <TableCoin coin={coin} key={coin.id} />
             </tr>
           ))}
