@@ -1,8 +1,8 @@
 import { GET_COINS } from "../actions/actions";
 import { GET_COIN_DETAIL } from "../actions/actions";
 
-import { Action } from "../../types/types";
-import { State } from "../../types/types";
+import { Action } from "../../types/ReducerTypes";
+import { State } from "../../types/ReducerTypes";
 
 const initialState = {
   isLoading: false,

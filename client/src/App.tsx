@@ -2,9 +2,22 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CoinDetails from "./pages/CoinDetail";
 import Home from "./pages/Home";
 
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+
+import { useDispatch } from "react-redux";
+import { getCoins } from "./redux/actions/actions";
+import { AppDispatch } from "./redux/store/store"
+
+
 
 function App() {
+
+const dispatch = useDispatch<AppDispatch>()
+useEffect(() => {
+  dispatch(getCoins())
+}, [])
+
+
   return (
     <div className="App">
       <BrowserRouter>

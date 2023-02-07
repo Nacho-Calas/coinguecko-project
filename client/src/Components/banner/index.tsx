@@ -1,9 +1,8 @@
-import React from 'react'
+import style from "./index.module.css"
 
 function Banner() {
   return (
-    <div>
-        
+    <div className={style.banner}>        
         Aca va el banner
 
     </div>

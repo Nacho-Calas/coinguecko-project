@@ -9,3 +9,4 @@ export interface State {
     coins: any[];
     coinDetail: any[];
 }
+
