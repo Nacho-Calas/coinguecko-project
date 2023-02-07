@@ -1,12 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { Coin } from "../../types/coinType";
 import { State } from "../../types/ReducerTypes";
 import TableCoin from "./tableCoin";
-import { Coin } from "../../types/coinType";
-import { useNavigate } from "react-router-dom";
 
 import style from "./rows.module.css";
-import { Link, Navigate } from "react-router-dom";
-
 
 function RowsCoin() {
   const coins = useSelector((state: State) => state.coins);
