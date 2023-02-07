@@ -24,7 +24,8 @@ export const getCoins = () => {
 export const getCoinDetail = (id: string) => {
   return async (dispatch: AppDispatch) => {
     const response = await axios.get(
-      `https://api.coingecko.com/api/v3/coins/${id}`
+      `https://api.coingecko.com/api/v3/coins/${id}?tickers=false&market_data=true&community_data=false&developer_data=false
+` 
     );
     try {
       dispatch({
@@ -36,3 +37,4 @@ export const getCoinDetail = (id: string) => {
     }
   };
 };
+
