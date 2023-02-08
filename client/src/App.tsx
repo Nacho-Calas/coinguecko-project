@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import { useGetCoins } from "./hooks/useGetCoins";
 
 function App() {
-  useGetCoins();
+  
   return (
     <div className="App">
       <BrowserRouter>

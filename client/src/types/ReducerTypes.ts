@@ -1,3 +1,4 @@
+import { Coin } from './coinType';
 
 /* Reducer Types */
 export interface Action {
@@ -7,6 +8,6 @@ export interface Action {
 export interface State {
     isLoading: boolean;
     coins: any[];
-    coinDetail: any[];
+    coinDetail: Coin | null;
 }
 

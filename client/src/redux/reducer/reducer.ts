@@ -7,7 +7,7 @@ import { State } from "../../types/ReducerTypes";
 const initialState = {
   isLoading: false,
   coins: [],
-  coinDetail: [],
+  coinDetail: null,
 };
 
 function rootReducer(state: State = initialState, action: Action) {
