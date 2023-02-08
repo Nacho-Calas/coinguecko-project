@@ -2,14 +2,14 @@
   position: relative;
   background-image: url("../../../public/banner.jpg");
   background-size: cover;
-  height: 100vh;
+  height: 70vh;
   width: 100vw;
 }
 .title {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 70vh;
   font-size: 4rem;
   color: rgb(255, 255, 255);
   font-weight: 700;

@@ -1,55 +1,37 @@
-import { useState, useEffect } from 'react';
-import { useGetCoins } from "../../hooks/useGetCoins";
+import { useState, MouseEventHandler } from "react";
 //@ts-ignore
 import style from "./paginacion.module.css";
 
-function Pagination() {
-    
-  const { getCoins } = useGetCoins();
- 
-  const [page, setPage] = useState(1);
-  console.log(page)
+type PaginationProps = {
+  onPrev: MouseEventHandler;
+  onNext: MouseEventHandler;
+  onSubmit: Function;
+  currentPage: string;
+};
 
+function Pagination({
+  onPrev,
+  onNext,
+  onSubmit,
+  currentPage,
+}: PaginationProps) {
   const [input, setInput] = useState("");
-  
-  useEffect(() => {
-    const pageStorage = JSON.parse(window.localStorage.getItem("page") || "1");
-    console.log(pageStorage)
-    setPage(pageStorage);
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem("page", JSON.stringify(page));
-  }, [page]);
-
-  const handleClickUp = () => {
-    setPage(page + 1);
-    /* getCoins(page + 1); */
-  };
-  const handleClickDown = () => {
-    if (page > 1) {
-      /* getCoins(page - 1); */
-      setPage(page - 1);
-    }
-  };
-  const handleInputChange = () => {
-    getCoins(page);
-  };
 
   return (
     <div className={style.containerPag}>
-      <button className={style.buttonPag} onClick={handleClickDown}>
+      <button className={style.buttonPag} onClick={onPrev}>
         {"<"} Prev
       </button>
       <input
         type="number"
         className={style.inputPag}
         onChange={(e) => setInput(e.target.value)}
+        defaultValue={currentPage}
       />
-      <button className={style.buttonPagGo} onClick={handleInputChange}>
+      <button className={style.buttonPagGo} onClick={() => onSubmit(input)}>
         GO
       </button>
-      <button className={style.buttonPag} onClick={handleClickUp}>
+      <button className={style.buttonPag} onClick={onNext}>
         Next {">"}
       </button>
     </div>

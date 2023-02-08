@@ -10,6 +10,34 @@ import style from "./rows.module.css";
 function RowsCoin() {
   const { coins, isLoading, getCoins } = useGetCoins();
 
+  const pageStorage = JSON.parse(window.localStorage.getItem("page") || "1");
+  const [page, setPage] = useState(pageStorage);
+
+  useEffect(() => {
+    setPage(pageStorage);
+  }, []);
+
+  useEffect(() => {
+    if (page) {
+      window.localStorage.setItem("page", JSON.stringify(page));
+      getCoins(page)
+    }
+  }, [page]);
+
+  const handleClickUp = () => {
+    setPage(page + 1);
+  };
+
+  const handleClickDown = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
+
+  const handleSubmit = (input: string) => {
+    setPage(parseInt(input))
+  };
+
   const navigate = useNavigate();
 
   const handleClick = (id: any) => {
@@ -45,7 +73,12 @@ function RowsCoin() {
               ))}
             </tbody>
           </table>
-          <Pagination />
+          <Pagination
+            onNext={handleClickUp}
+            onPrev={handleClickDown}
+            onSubmit={handleSubmit}
+            currentPage={page}
+          />
         </div>
       )}
     </>
