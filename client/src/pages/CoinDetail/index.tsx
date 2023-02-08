@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { currencyFormat } from "../../utils/mktFormat";
-
 import { useGetDetail } from "../../hooks/useGetDetail";
+//@ts-ignore
 import style from "./index.module.css";
 
 function CoinDetails() {

@@ -1,3 +1,4 @@
+//@ts-ignore
 import style from "./index.module.css";
 
 function Banner() {

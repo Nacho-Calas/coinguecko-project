@@ -1,6 +1,6 @@
 import { currencyFormat } from "../../utils/mktFormat";
 import { Coin } from "../../types/coinType";
-
+//@ts-ignore
 import style from "./table.module.css";
 
 function TableCoin({ coin }: { coin: Coin }) {
