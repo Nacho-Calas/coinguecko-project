@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from 'react';
 import { useGetCoins } from "../../hooks/useGetCoins";
 //@ts-ignore
 import style from "./paginacion.module.css";
@@ -8,23 +8,33 @@ function Pagination() {
   const { getCoins } = useGetCoins();
  
   const [page, setPage] = useState(1);
+
   const [input, setInput] = useState("");
   
-  //save the page in the local storage to keep the page when the user refresh the page
-  localStorage.setItem("page", JSON.stringify(page));
+  useEffect(() => {
+    const pageStorage = JSON.parse(window.localStorage.getItem("page") || "1");
+    setPage(pageStorage);
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("page", JSON.stringify(page));
+  }, [page]);
 
   const handleClickUp = () => {
     setPage(page + 1);
+    console.log(page)
 
     /* getCoins(page + 1); */
   };
   const handleClickDown = () => {
     if (page > 1) {
       /* getCoins(page - 1); */
+      setPage(page - 1);
+      console.log(page)
     }
   };
   const handleInputChange = () => {
-    getCoins(parseInt(input));
+    getCoins(page);
   };
 
   return (
