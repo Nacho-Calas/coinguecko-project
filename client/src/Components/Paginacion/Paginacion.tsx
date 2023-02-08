@@ -24,18 +24,18 @@ function Pagination() {
   return (
     <div className={style.containerPag}>
       <button className={style.buttonPag} onClick={handleClickDown}>
-        Prev
+        {"<"} Prev
       </button>
       <input
         type="number"
         className={style.inputPag}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button className={style.buttonPag} onClick={handleInputChange}>
+      <button className={style.buttonPagGo} onClick={handleInputChange}>
         GO
       </button>
       <button className={style.buttonPag} onClick={handleClickUp}>
-        Next
+        Next {">"}
       </button>
     </div>
   );

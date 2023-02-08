@@ -20,6 +20,19 @@
   border-radius: 10px;
   cursor: pointer;
 }
+.buttonPagGo {
+  background-color: #405cf5;
+  border: none;
+  color: white;
+  padding: 15px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
 .inputPag {
   background-color: #405cf5;
