@@ -5,6 +5,7 @@ import {
   GET_COIN_DETAIL,
   GET_COIN_DETAIL_SUCCESS,
   GET_COIN_DETAIL_ERROR,
+  SET_PAGE_NUMBER,
 } from "../actions/actions";
 
 import { Action } from "../../types/ReducerTypes";
@@ -14,6 +15,7 @@ const initialState = {
   isLoading: false,
   coins: [],
   coinDetail: null,
+  page: 1,
 };
 
 function rootReducer(state: State = initialState, action: Action) {
@@ -57,6 +59,13 @@ function rootReducer(state: State = initialState, action: Action) {
         isLoading: false,
       };
     }
+    case SET_PAGE_NUMBER: {
+      return {
+        ...state,
+        page: action.payload,
+      };
+    }
+
     default:
       return state;
   }

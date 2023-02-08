@@ -32,8 +32,8 @@ function RowsCoin() {
                 <th>#</th>
                 <th>Coin</th>
                 <th>Price</th>
-                <th>Mkt Cap</th>
-                <th>24h Volume</th>
+                <th className={style.hidden}>Mkt Cap</th>
+                <th className={style.hidden}>24h Volume</th>
                 <th>24h</th>
               </tr>
             </thead>

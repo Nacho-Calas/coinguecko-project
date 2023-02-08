@@ -6,6 +6,8 @@ export const GET_COINS_ERROR = "GET_COINS_ERROR";
 export const GET_COINS_SUCCESS = "GET_COINS_SUCCESS";
 export const GET_COIN_DETAIL_SUCCESS = "GET_COIN_DETAIL_SUCCESS";
 export const GET_COIN_DETAIL_ERROR = "GET_COIN_DETAIL_ERROR";
+export const SET_PAGE_NUMBER = "SET_PAGE_NUMBER";
+
 
 import { AppDispatch } from "../store/store";
 
@@ -58,3 +60,9 @@ export const getCoinDetail = (id: string) => {
   };
 };
 
+export const setPageNumber = (page: number) => {
+  return {
+    type: SET_PAGE_NUMBER,
+    payload: page,
+  };
+}

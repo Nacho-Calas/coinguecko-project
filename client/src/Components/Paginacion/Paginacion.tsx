@@ -4,17 +4,23 @@ import { useGetCoins } from "../../hooks/useGetCoins";
 import style from "./paginacion.module.css";
 
 function Pagination() {
+    
   const { getCoins } = useGetCoins();
-
-  const [page] = useState(1);
+ 
+  const [page, setPage] = useState(1);
   const [input, setInput] = useState("");
+  
+  //save the page in the local storage to keep the page when the user refresh the page
+  localStorage.setItem("page", JSON.stringify(page));
 
   const handleClickUp = () => {
-    getCoins(page + 1);
+    setPage(page + 1);
+
+    /* getCoins(page + 1); */
   };
   const handleClickDown = () => {
     if (page > 1) {
-      getCoins(page - 1);
+      /* getCoins(page - 1); */
     }
   };
   const handleInputChange = () => {

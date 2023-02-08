@@ -8,9 +8,9 @@
 }
 
 .buttonPag {
-  background-color: #405cf5;
+  background-color: #ffffff;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -21,9 +21,9 @@
   cursor: pointer;
 }
 .buttonPagGo {
-  background-color: #405cf5;
+  background-color: #ffffff;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 15px 10px;
   text-align: center;
   text-decoration: none;
@@ -35,9 +35,9 @@
 }
 
 .inputPag {
-  background-color: #405cf5;
+  background-color: #ffffff;
   border: none;
-  color: white;
+  color: rgb(10, 0, 0);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -50,3 +50,49 @@
   outline: none;
 }
 
+@media screen and (max-width : 768px){
+  .buttonPag {
+    background-color: #ffffff;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9rem;
+    margin: 4px 2px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .buttonPagGo {
+    background-color: #ffffff;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9rem;
+    margin: 4px 2px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .inputPag {
+    background-color: #ffffff;
+    border: none;
+    color: rgb(5, 0, 0);
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px; 
+    outline: none;
+  }
+
+  
+}

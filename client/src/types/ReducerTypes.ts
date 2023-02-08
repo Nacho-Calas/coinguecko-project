@@ -9,5 +9,6 @@ export interface State {
     isLoading: boolean;
     coins: any[];
     coinDetail: Coin | null;
+    page: number;
 }
 

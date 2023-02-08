@@ -50,7 +50,6 @@
 .symbol{
     width: 2;
     height: 2;
-    margin-left: 10px;
     color: #ffffff65;
     text-transform: uppercase;
 }
@@ -65,4 +64,36 @@
 .coinname{
     display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .contentTable{
+        font-size: 0.8em;
+    }
+    .contentTable thead tr{
+        font-size: 1em;
+    }
+    .contentTable th,
+    .contentTable td{
+        padding: 10px 10px;
+    }
+    .contentTable img{
+        width: 10%;
+    }
+    .coinname{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .symbol{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 620px) {
+  .hidden {
+    display: none;
+  }
+  
+    
 }
