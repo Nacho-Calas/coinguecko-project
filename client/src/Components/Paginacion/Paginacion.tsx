@@ -8,11 +8,13 @@ function Pagination() {
   const { getCoins } = useGetCoins();
  
   const [page, setPage] = useState(1);
+  console.log(page)
 
   const [input, setInput] = useState("");
   
   useEffect(() => {
     const pageStorage = JSON.parse(window.localStorage.getItem("page") || "1");
+    console.log(pageStorage)
     setPage(pageStorage);
   }, []);
 
@@ -22,15 +24,12 @@ function Pagination() {
 
   const handleClickUp = () => {
     setPage(page + 1);
-    console.log(page)
-
     /* getCoins(page + 1); */
   };
   const handleClickDown = () => {
     if (page > 1) {
       /* getCoins(page - 1); */
       setPage(page - 1);
-      console.log(page)
     }
   };
   const handleInputChange = () => {
