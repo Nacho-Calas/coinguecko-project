@@ -3,7 +3,7 @@
   background-image: url("../../../public/banner.jpg");
   background-size: cover;
   height: 70vh;
-  width: 100vw;
+  width: 100%;
 }
 .title {
   display: flex;
