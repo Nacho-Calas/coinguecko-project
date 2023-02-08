@@ -6,7 +6,7 @@ import { Action, State } from '../../types/ReducerTypes';
 
 const middleware = [thunk];
 
-export type AppDispatch = ThunkDispatch<State, unknown, Action>;
+export type AppDispatch = ThunkDispatch<State, null, any>;
 
 export type AppThunk = ThunkAction<
   Promise<void>,

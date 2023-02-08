@@ -5,20 +5,30 @@ import { State } from "../../types/ReducerTypes";
 import TableCoin from "./tableCoin";
 import { AppDispatch } from "../../redux/store/store";
 import style from "./rows.module.css";
-import { useGetCoins } from "../../hooks/useGetCoins";
 import Paginacion from "../Paginacion/Paginacion";
+import { useGetCoins } from "../../hooks/useGetCoins";
+import { useEffect, useState } from "react";
 
 function RowsCoin(num: number) {
+  const { coins, isLoading, disCoins } = useGetCoins();
 
-  useGetCoins(num || 1);
-
-  const coins = useSelector((state: State) => state.coins);
   const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleClick = (id: any) => {
     navigate(`/coins/${id}`);
   };
+
+  const [pagina, setPagina] = useState(1);
+  const [coinsPerPage, setCoinsPerPage] = useState(15);
+
+  const handlePageChange = (page: number) => {
+    setPagina(page);
+  };
+
+  useEffect(() => {
+    disCoins(pagina);
+  }, [pagina]);
 
   return (
     <div>
@@ -42,7 +52,7 @@ function RowsCoin(num: number) {
         </tbody>
       </table>
       <Paginacion />
-          </div>
+    </div>
   );
 }
 
