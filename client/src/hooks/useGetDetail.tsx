@@ -7,5 +7,5 @@ export const useGetDetail = (id: string) => {
     const dispatch: AppDispatch = useDispatch();
     useEffect(() => {
       dispatch(getCoinDetail(id));
-    }, []);
+    }, [dispatch, id]);
   }

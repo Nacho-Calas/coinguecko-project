@@ -8,6 +8,8 @@ import { getCoinDetail } from "../../redux/actions/actions";
 import { AppDispatch } from "../../redux/store/store";
 
 import style from "./rows.module.css";
+import { useState } from "react";
+import Paginacion from '../Paginacion/Paginacion';
 
 function RowsCoin() {
   const coins = useSelector((state: State) => state.coins);
@@ -15,10 +17,25 @@ function RowsCoin() {
   const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleClick = (id: string) => {
-    dispatch(getCoinDetail(id));
+  const handleClick = (id: any) => {
+    /* dispatch(getCoinDetail(id)); */
     navigate(`/coins/${id}`);
   };
+
+
+//set a state to paginate the table
+const [pagina, setPagina] = useState(1);
+const [coinsPerPage, setCoinsPerPage] = useState(15);
+
+const maxPage = Math.ceil(coins.length / coinsPerPage);
+console.log(maxPage)
+
+
+
+
+
+
+
 
   return (
     <div>
@@ -41,7 +58,8 @@ function RowsCoin() {
           ))}
         </tbody>
       </table>
-    </div>
+      <Paginacion pagina={pagina} setPagina={setPagina} maxPage={maxPage} />
+          </div>
   );
 }
 
