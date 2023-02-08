@@ -1,31 +1,22 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { Coin } from "../../types/coinType";
-import { currencyFormat } from "../../utils/mktFormat";
 import { useParams } from "react-router-dom";
-import { getCoinDetail } from "../../redux/actions/actions";
-import { useDispatch } from "react-redux";
-import { useGetCoins } from "./hooks/useGetCoins";
+import { currencyFormat } from "../../utils/mktFormat";
 
-
+import { useGetDetail } from "../../hooks/useGetDetail";
 import style from "./index.module.css";
-
-import { AppDispatch } from "../../redux/store/store";
 
 function CoinDetails() {
   const { id } = useParams();
-  const dispatch: AppDispatch = useDispatch();
 
-  const coin = useSelector((state: Coin) => state.coinDetail);
-  console.log(coin);
+  const { coin, getCoinDetail } = useGetDetail();
 
   useEffect(() => {
     if (id) {
-      dispatch(getCoinDetail(id));
+      getCoinDetail(id);
     }
-  }, [dispatch]);
+  }, [id]);
 
-  if (!coin) return <h1 className={style.loading}>Loading...</h1>;
+  /* if (!coin) return <h1 className={style.loading}>Loading...</h1>; */
 
   return (
     <div className={style.container}>

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { getCoins } from "../redux/actions/actions";
+import { getCoins as actionGetCoins } from "../redux/actions/actions";
 import { AppDispatch } from "../redux/store/store";
 import { useDispatch, useSelector } from "react-redux";
 import { State } from "../types/ReducerTypes";
@@ -10,13 +10,13 @@ export const useGetCoins = () => {
   const isLoading = useSelector((state: State) => state.isLoading);
   const dispatch: AppDispatch = useDispatch();
 
-  const disCoins = (page: number) => {
-    dispatch(getCoins(page));
+  const getCoins = (page: number) => {
+    dispatch(actionGetCoins(page));
   } 
 
   return {
     coins,
     isLoading,
-    disCoins,
+    getCoins,
   } 
 };

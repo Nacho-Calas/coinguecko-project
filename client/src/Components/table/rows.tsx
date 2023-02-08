@@ -10,9 +10,8 @@ import { useGetCoins } from "../../hooks/useGetCoins";
 import { useEffect, useState } from "react";
 
 function RowsCoin(num: number) {
-  const { coins, isLoading, disCoins } = useGetCoins();
+  const { coins, isLoading, getCoins } = useGetCoins();
 
-  const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleClick = (id: any) => {
@@ -27,7 +26,7 @@ function RowsCoin(num: number) {
   };
 
   useEffect(() => {
-    disCoins(pagina);
+    getCoins(pagina);
   }, [pagina]);
 
   return (
