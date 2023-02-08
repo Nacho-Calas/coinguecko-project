@@ -1,4 +1,4 @@
-import { currencyFormat } from "../../utils/mktFormat";
+import { currencyFormat, percentageFormat } from "../../utils/mktFormat";
 import { Coin } from "../../types/coinType";
 //@ts-ignore
 import style from "./table.module.css";
@@ -21,7 +21,7 @@ function TableCoin({ coin }: { coin: Coin }) {
           coin.price_change_percentage_24h > 0 ? style.green : style.red
         }
       >
-        {coin.price_change_percentage_24h}%
+        {percentageFormat(coin.price_change_percentage_24h)}
       </td>
     </>
   );

@@ -1,27 +1,24 @@
 import { useState } from "react";
 import { useGetCoins } from "../../hooks/useGetCoins";
-
-//ignore next line
 //@ts-ignore
 import style from "./paginacion.module.css";
 
 function Pagination() {
-  const { coins, isLoading, getCoins } = useGetCoins();
+  const { getCoins } = useGetCoins();
 
-  const [page, setpage] = useState(1);
+  const [page] = useState(1);
+  const [input, setInput] = useState("");
 
   const handleClickUp = () => {
     getCoins(page + 1);
-    console.log(page);
   };
   const handleClickDown = () => {
     if (page > 1) {
       getCoins(page - 1);
     }
-    console.log(page);
   };
-  const handleInputChange = (e: any) => {
-    getCoins(e.target.value);
+  const handleInputChange = () => {
+    getCoins(parseInt(input));
   };
 
   return (
@@ -32,8 +29,11 @@ function Pagination() {
       <input
         type="number"
         className={style.inputPag}
-        onChange={handleInputChange}
+        onChange={(e) => setInput(e.target.value)}
       />
+      <button className={style.buttonPag} onClick={handleInputChange}>
+        GO
+      </button>
       <button className={style.buttonPag} onClick={handleClickUp}>
         Next
       </button>
