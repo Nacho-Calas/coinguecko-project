@@ -19,8 +19,11 @@ function Pagination({
 
   return (
     <div className={style.containerPag}>
-      <button className={style.buttonPag} onClick={onPrev}>
-        {"<"}
+      <button className={style.buttonLPag} onClick={onPrev}>
+        <div className={style.arrow}>
+          <span></span>
+          <span></span>
+        </div>
       </button>
       <input
         type="number"
@@ -31,8 +34,11 @@ function Pagination({
       <button className={style.buttonPagGo} onClick={() => onSubmit(input)}>
         GO
       </button>
-      <button className={style.buttonPag} onClick={onNext}>
-        {">"}
+      <button className={style.buttonRPag} onClick={onNext} >
+        <div className={style.arrow} >
+          <span></span>
+          <span></span>
+        </div>
       </button>
     </div>
   );
