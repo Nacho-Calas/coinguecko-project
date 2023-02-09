@@ -69,6 +69,7 @@
 @media screen and (max-width: 768px) {
     .contentTable{
         font-size: 0.8em;
+        width: 100%;
     }
     .contentTable thead tr{
         font-size: 1em;

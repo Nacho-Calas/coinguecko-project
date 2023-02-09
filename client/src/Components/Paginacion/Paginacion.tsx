@@ -20,7 +20,7 @@ function Pagination({
   return (
     <div className={style.containerPag}>
       <button className={style.buttonPag} onClick={onPrev}>
-        {"<"} Prev
+        {"<"}
       </button>
       <input
         type="number"
@@ -32,7 +32,7 @@ function Pagination({
         GO
       </button>
       <button className={style.buttonPag} onClick={onNext}>
-        Next {">"}
+        {">"}
       </button>
     </div>
   );

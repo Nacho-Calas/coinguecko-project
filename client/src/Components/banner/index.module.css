@@ -6,6 +6,7 @@
   width: 100%;
 }
 .title {
+  margin-left: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +19,6 @@
 
 @media (max-width: 768px) {
   .title {
-    margin-left: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,9 +31,9 @@
   }
   .banner {
     background-image: url("../../../public/phone_banner.jpg");
+    width: 100%;
     background-size: cover;
     object-fit: fill;
     height: 50vh;
-    width: 100%;
   }
 }

@@ -1,4 +1,4 @@
-import { currencyFormat, percentageFormat } from "../../utils/mktFormat";
+import { currencyFormat, percentageFormat, priceFormat } from "../../utils/mktFormat";
 import { Coin } from "../../types/coinType";
 //@ts-ignore
 import style from "./table.module.css";
@@ -12,7 +12,7 @@ function TableCoin({ coin }: { coin: Coin }) {
         <span>{coin.name}</span>
         <span className={style.symbol}>{coin.symbol}</span>
       </td>
-      <td>${coin.current_price}</td>
+      <td>{priceFormat(coin.current_price)}</td>
       <td className={style.hidden}>{currencyFormat(coin.market_cap)}</td>
       <td className={style.hidden}>{currencyFormat(coin.total_volume)}</td>
       <td
